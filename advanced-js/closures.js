@@ -18,3 +18,26 @@ function a1(x2){
 
 let returned = a1(5);
 console.log(returned(2));
+
+
+function demoprivate(name,age){
+    let _name = name;
+    let _age = age;
+
+    return {
+
+        getage(){
+            return _age;
+        },
+
+        getname(){
+            return _name;
+        }
+    }
+
+}
+let fun = demoprivate('Abul Hasan',25);
+//should be undeinfed
+console.log(fun._name)
+//should be 25, effectively creating private variables and getter for it
+console.log(fun.getage());
